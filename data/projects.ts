@@ -29,8 +29,8 @@ export const projects: Project[] = [
       "/projects/profile-portfolio/4.png",
       "/projects/profile-portfolio/5.png",
     ],
-    live: "https://boolean405.vercel.app",
-    source: "https://github.com/boolean405/profile-portfolio",
+    live: "https://boboaung.vercel.app",
+    source: "https://github.com/boboaungdev/profile-portfolio",
   },
   {
     _id: "2",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
       "/projects/chat-mal/4.png",
     ],
     live: "https://apkpure.com/p/com.chat.mal",
-    source: "https://github.com/boolean405/chat-mal",
+    source: "https://github.com/boboaungdev/chat-mal",
   },
   {
     _id: "3",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
       "REST API",
     ],
     images: ["/projects/nodejs-api/1.png", "/projects/nodejs-api/2.png"],
-    source: "https://github.com/boolean405/nodejs-api-project",
+    source: "https://github.com/boboaungdev/nodejs-api-project",
   },
   {
     _id: "4",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     ],
     images: ["/projects/ccxt-bot/1.png", "/projects/ccxt-bot/2.png"],
     source:
-      "https://github.com/boolean405/moving-average-engulfing-trading-bot",
+      "https://github.com/boboaungdev/moving-average-engulfing-trading-bot",
   },
   {
     _id: "5",
@@ -143,7 +143,7 @@ export const projects: Project[] = [
       "/projects/flutter-bmi-calculator/2.png",
     ],
     live: "https://apkpure.com/p/com.boboaung.bmicalculator",
-    source: "https://github.com/boolean405/flutter-bmi-calculator",
+    source: "https://github.com/boboaungdev/flutter-bmi-calculator",
   },
   {
     _id: "6",
@@ -173,7 +173,7 @@ export const projects: Project[] = [
       "/projects/nextjs-ecommerce/1.png",
       "/projects/nextjs-ecommerce/2.png",
     ],
-    source: "https://github.com/boolean405/nextjs-ecommerce-project",
+    source: "https://github.com/boboaungdev/nextjs-ecommerce-project",
   },
   {
     _id: "8",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
       "/projects/record-film-production/4.png",
     ],
     live: "https://recordfilmproduction.netlify.app",
-    source: "https://github.com/boolean405/record-film-production",
+    source: "https://github.com/boboaungdev/record-film-production",
   },
   {
     _id: "7",
@@ -224,6 +224,6 @@ export const projects: Project[] = [
       "/projects/vue-shoppy/4.png",
     ],
     live: "https://shoppyproject.netlify.app/",
-    source: "https://github.com/boolean405/vuejs-shoppy-project",
+    source: "https://github.com/boboaungdev/vuejs-shoppy-project",
   },
 ];
