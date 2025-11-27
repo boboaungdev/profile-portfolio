@@ -1,6 +1,6 @@
 export const profile = {
   name: "Bo Bo Aung",
-  title: "Full-Stack Developer - Next.js, Node.js & Expo",
+  title: "Full-Stack Developer - Node.js & React Native(Expo)",
   resume:
     "https://docs.google.com/uc?export=download&id=1Q6ij2qtULeK-PzhFoiWts_4kRDyTRLD9",
   github: "https://github.com/boboaungdev",
