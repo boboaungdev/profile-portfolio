@@ -3,13 +3,13 @@ export const profile = {
   title: "Full-Stack Developer - Next.js, Node.js & Expo",
   resume:
     "https://docs.google.com/uc?export=download&id=1Q6ij2qtULeK-PzhFoiWts_4kRDyTRLD9",
-  github: "https://github.com/boolean405",
+  github: "https://github.com/boboaungdev",
   linkedin: "https://www.linkedin.com/in/boboaung",
-  x: "https://x.com/boolean405",
+  x: "https://x.com/boboaungdev",
   website: "https://boboaung.vercel.app",
   description:
     "Portfolio of Bo Bo Aung (Boolean): projects, resume, and contact. Building scalable, real-time web and mobile applications.",
-  email: "boolean405@gmail.com",
+  email: "boboaungdev@gmail.com",
   image: "/profile/boolean405-portfolio.jpg",
   bio: "I'm Bo Bo Aung (Boolean), a full-stack developer with 7+ years of experience building secure, scalable web and mobile applications. I specialize in backend development with Node.js, Express, MongoDB/Mongoose, Redis, and Socket.IO for real-time systems, and frontends with React, Next.js, and Expo React Native (TypeScript). I've delivered production-ready solutions across WebRTC audio/video calling, push notifications, camera/media workflows, and offline-first patterns. My expertise includes e-commerce and payments (Stripe, PayPal), authentication/authorization, and Linux/server operations. I favor clean, modular architectures with Joi-first validation, robust testing, and CI/CD, while leveraging AI tooling to accelerate implementation, reviews, and learning. I focus on performance, scalability, and user experience to deliver seamless, real-time applications that are maintainable, observable, and ready to scale.",
   skills: [
