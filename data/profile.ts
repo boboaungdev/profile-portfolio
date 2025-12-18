@@ -1,8 +1,8 @@
 export const profile = {
   name: "Bo Bo Aung",
-  title: "Full-Stack Developer",
+  title: "Full-Stack Developer (Node.js, Next.js, Express.js)",
   resume:
-    "https://docs.google.com/uc?export=download&id=1NIPMeP8vp3EJzlSBUJa5F6rsKMenDDYJ",
+    "https://docs.google.com/uc?export=download&id=1w46NUBsraFWzoj1nJruxncJWCmLnSLjw",
   github: "https://github.com/boboaungdev",
   linkedin: "https://www.linkedin.com/in/boboaung",
   x: "https://x.com/boboaungdev",
@@ -11,7 +11,7 @@ export const profile = {
     "Portfolio of Bo Bo Aung (Boolean): projects, resume, and contact. Building scalable, real-time web and mobile applications.",
   email: "boboaungdev@gmail.com",
   image: "/profile/boolean405-portfolio.jpg",
-  bio: "I'm Bo Bo Aung (Boolean), a full-stack developer with 5+ years of experience building secure, scalable web and mobile applications. I specialize in backend development with Node.js, Express, MongoDB/PostgreSQL, Redis, and Socket.IO for real-time systems, and frontends with React, Next.js, and Expo React Native (TypeScript). I've delivered production-ready solutions across WebRTC audio/video calling, push notifications, camera/media workflows, and offline-first patterns. My expertise includes e-commerce and payments (Stripe, PayPal), authentication/authorization, and Linux/server operations. I favor clean, modular architectures with Joi-first validation, robust testing, and CI/CD, while leveraging AI tooling to accelerate implementation, reviews, and learning. I focus on performance, scalability, and user experience to deliver seamless, real-time applications that are maintainable, observable, and ready to scale.",
+  bio: "Full Stack Developer with 5+ years of experience delivering secure, scalable, and production-ready applications. Expert in backend development (Node.js, Express.js, MongoDB) with advanced proficiency in JavaScript and TypeScript. Specialised in building REST API, chatting apps and real-time applications with Socket.IO, including authentication, live messaging, and event-driven systems. Skilled in frontend (React.js, Next.js, modern UI frameworks) and mobile (React Native, Expo, Zustand). Experienced in RESTful APIs, JWT authentication with refresh token rotation, microservices, and E-commerce systems. Hands-on with AI integration and cloud-native deployments (Vercel, Render, Serverless, Docker, GitHub Actions). Strong communicator, collaborative team player, and motivated continuous learner.",
   skills: [
     "JavaScript (ES6+)",
     "TypeScript",
