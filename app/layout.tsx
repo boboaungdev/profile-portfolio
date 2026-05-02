@@ -1,5 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import {
   GOOGLE_SITE_VERIFICATION,
@@ -43,7 +45,9 @@ export const metadata: Metadata = {
     siteName: PROFILE_NAME,
     locale: "en_US",
     type: "website",
-    images: [{ url: absoluteUrl(PROFILE_IMAGE_PATH), width: 1200, height: 630 }],
+    images: [
+      { url: absoluteUrl(PROFILE_IMAGE_PATH), width: 1200, height: 630 },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
+    shortcut: ["/favicon-16x16.png", "/favicon-32x32.png"],
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
@@ -94,6 +98,8 @@ export default function RootLayout({
           <Navbar />
           <main className="overflow-hidden">{children}</main>
           <Footer />
+          <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
