@@ -5,7 +5,7 @@ export const PROFILE_GITHUB_URL = "https://github.com/boboaungdev";
 export const PROFILE_LINKEDIN_URL = "https://www.linkedin.com/in/boboaung";
 export const PROFILE_X_URL = "https://x.com/boboaungdev";
 export const PROFILE_X_HANDLE = "@boboaungdev";
-export const PROFILE_WEBSITE_URL = "https://developer.stratarena.com";
+export const PROFILE_WEBSITE_URL = "https://bobo.stratarena.com";
 export const PROFILE_EMAIL = "boboaungdev@gmail.com";
 export const PROFILE_IMAGE_PATH = "/profile/profile.jpg";
 

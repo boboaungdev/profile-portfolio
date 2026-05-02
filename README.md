@@ -2,7 +2,7 @@
 
 Personal portfolio built with Next.js 16, React 19, Tailwind CSS 4, and TypeScript.
 
-Live site: [developer.stratarena.com](https://developer.stratarena.com)
+Live site: [bobo.stratarena.com](https://bobo.stratarena.com)
 
 ## Overview
 
@@ -97,7 +97,7 @@ Before deploy:
 
 Bo Bo Aung
 
-- Website: [developer.stratarena.com](https://developer.stratarena.com)
+- Website: [bobo.stratarena.com](https://bobo.stratarena.com)
 - GitHub: [github.com/boboaungdev](https://github.com/boboaungdev)
 - LinkedIn: [linkedin.com/in/boboaung](https://www.linkedin.com/in/boboaung)
 - X: [x.com/boboaungdev](https://x.com/boboaungdev)
