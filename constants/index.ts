@@ -17,9 +17,10 @@ export const EXPERIENCE_YEARS = Math.max(
 export const EXPERIENCE_LABEL = `${EXPERIENCE_YEARS}+`;
 
 // Environment variables
+export const CONTACT_FROM_EMAIL =
+  process.env.CONTACT_FROM_EMAIL || "Portfolio Website <onboarding@resend.dev>";
+
 export const PORTFOLIO_RESUME_URL = process.env.PORTFOLIO_RESUME_URL || "";
 export const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
-export const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "";
-export const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "";
 export const GOOGLE_SITE_VERIFICATION =
   process.env.GOOGLE_SITE_VERIFICATION || "";

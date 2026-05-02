@@ -39,7 +39,6 @@ npm install
 ```env
 PORTFOLIO_RESUME_URL=
 RESEND_API_KEY=
-CONTACT_TO_EMAIL=
 CONTACT_FROM_EMAIL=
 GOOGLE_SITE_VERIFICATION=
 ```
@@ -77,7 +76,8 @@ types/          shared TypeScript types
 
 - `PORTFOLIO_RESUME_URL` is used for the resume download link.
 - `RESEND_API_KEY` must stay server-only.
-- `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are used by the contact API route.
+- `CONTACT_FROM_EMAIL` is used by the contact API route.
+- contact messages are delivered to the profile email configured in the app constants.
 - `GOOGLE_SITE_VERIFICATION` adds the Search Console verification meta tag.
 - Do not commit your real `.env` file.
 

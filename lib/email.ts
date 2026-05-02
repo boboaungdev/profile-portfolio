@@ -2,7 +2,7 @@
 import { Resend } from "resend";
 import {
   CONTACT_FROM_EMAIL,
-  CONTACT_TO_EMAIL,
+  PROFILE_EMAIL,
   RESEND_API_KEY,
 } from "@/constants";
 
@@ -23,7 +23,7 @@ export function contactEmail({
   email: string;
   message: string;
 }) {
-  const to = CONTACT_TO_EMAIL;
+  const to = PROFILE_EMAIL;
   const from = CONTACT_FROM_EMAIL;
   const subject = `New portfolio message from ${name}`;
   const text = `From: ${name} <${email}>\n\n${message}`;
