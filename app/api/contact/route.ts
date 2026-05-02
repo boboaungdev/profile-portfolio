@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/validators";
-import { resend, contactEmail } from "@/lib/email";
+import { getResendClient, contactEmail } from "@/lib/email";
 
 export const runtime = "nodejs"; // Resend Node SDK
 
@@ -19,6 +19,7 @@ export async function POST(req: Request) {
     }
 
     const { to, from, subject, text } = contactEmail(value);
+    const resend = getResendClient();
     const result = await resend.emails.send({ to, from, subject, text });
 
     if (result.error) {

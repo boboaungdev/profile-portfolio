@@ -17,7 +17,10 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const shouldReduce = useReducedMotion();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   const isDark = theme === "dark";
 

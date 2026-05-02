@@ -1,6 +1,6 @@
 # 🌐 Profile Portfolio (Next.js + TailwindCSS)
 
-A modern and responsive **developer portfolio** built with **Next.js 15, React 19, TailwindCSS 4, and MongoDB (Mongoose)**.  
+A modern and responsive **developer portfolio** built with **Next.js 16, React 19, TailwindCSS 4, and MongoDB (Mongoose)**.  
 It’s designed for speed, clean UI, dark mode, and easy customization — perfect for showcasing projects, skills, and contact details.
 
 https://boolean405.github.io/profile-portfolio
@@ -9,7 +9,7 @@ https://boolean405.github.io/profile-portfolio
 
 ## ✨ Features
 
-- ⚡ **Next.js 15 (App Router)** – Latest stable framework
+- ⚡ **Next.js 16 (App Router)** – Latest stable framework
 - 🎨 **TailwindCSS 4** – Utility-first styling with animations (`tw-animate-css`)
 - 🌙 **Dark Mode** – Powered by `next-themes`
 - 📜 **Dynamic Projects & Blogs** – Easily extendable
@@ -23,7 +23,7 @@ https://boolean405.github.io/profile-portfolio
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15 (with Turbopack)
+- **Framework:** Next.js 16 (with Turbopack)
 - **Frontend:** React 19, TailwindCSS 4, Lucide React, React Icons
 - **Carousel:** Embla Carousel (autoplay)
 - **Backend/DB:** MongoDB with Mongoose

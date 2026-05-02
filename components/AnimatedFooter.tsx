@@ -7,7 +7,8 @@ import {
   easeOut,
   useReducedMotion,
 } from "framer-motion";
-import { SiGithub, SiLinkedin, SiGmail, SiX } from "react-icons/si";
+import { SiGithub, SiGmail, SiX } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
 import { IoDocument } from "react-icons/io5";
 
 type IconKey = "github" | "linkedin" | "x" | "email" | "resume";
@@ -28,7 +29,7 @@ type Props = {
 
 const ICONS: Record<IconKey, React.ComponentType<{ className?: string }>> = {
   github: SiGithub,
-  linkedin: SiLinkedin,
+  linkedin: FaLinkedinIn,
   x: SiX,
   email: SiGmail,
   resume: IoDocument,
