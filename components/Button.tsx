@@ -19,11 +19,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
     ref
   ) {
     const base =
-      "inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium";
-    const styles =
-      variant === "secondary"
-        ? "bg-transparent border border-black/10"
-        : "bg-[rgb(var(--brand))] text-white";
+      "btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--ring))]";
+    const styles = variant === "secondary" ? "btn-secondary" : "btn-primary";
 
     // Anchor or Next Link
     if (As && href) {

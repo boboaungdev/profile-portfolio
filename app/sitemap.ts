@@ -1,10 +1,10 @@
-// src/app/sitemap.ts
 import type { MetadataRoute } from "next";
+
+import { PROFILE_WEBSITE_URL } from "@/constants";
 import { projects } from "@/data/projects";
-import { getCurrentOrigin } from "@/utils/getCurrentOrigin";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = await getCurrentOrigin();
+  const base = PROFILE_WEBSITE_URL;
   const routes = ["", "/projects", "/contact"].map((p) => ({
     url: base + p,
     lastModified: new Date(),

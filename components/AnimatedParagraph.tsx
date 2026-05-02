@@ -19,7 +19,8 @@ export default function AnimatedParagraph({
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-        className={className}
+        className={`select-text ${className || ""}`}
+        style={{ userSelect: "text" }}
         {...rest}
       >
         {children}
@@ -31,9 +32,10 @@ export default function AnimatedParagraph({
   const words = children.split(" ");
   return (
     <motion.p
-      className={className}
+      className={`select-text ${className || ""}`}
       initial="hidden"
       animate="show"
+      style={{ userSelect: "text" }}
       variants={{
         hidden: { opacity: 1 },
         show: {
@@ -50,7 +52,12 @@ export default function AnimatedParagraph({
             hidden: { opacity: 0, y: 10 },
             show: { opacity: 1, y: 0 },
           }}
-          style={{ display: "inline-block", whiteSpace: "pre-wrap" }}
+          className="select-text"
+          style={{
+            display: "inline-block",
+            whiteSpace: "pre-wrap",
+            userSelect: "text",
+          }}
         >
           {w + (i < words.length - 1 ? " " : "")}
         </motion.span>

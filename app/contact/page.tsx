@@ -1,59 +1,61 @@
-// src/app/contact/page.tsx
-"use client";
-import { useState } from "react";
+import type { Metadata } from "next";
+
+import { ContactForm } from "@/components/ContactForm";
+import { Section } from "@/components/Section";
+import { profile } from "@/data/profile";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact Bo Bo Aung about freelance work, backend-heavy products, realtime systems, or full-stack app builds.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<string | null>(null);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    setStatus("Sending…");
-
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: form.get("name"),
-        email: form.get("email"),
-        message: form.get("message"),
-      }),
-    });
-
-    const data = await res.json();
-    setStatus(res.ok ? "Message sent!" : data.error || "Failed to send.");
-    if (res.ok) (e.currentTarget as HTMLFormElement).reset();
-  }
-
   return (
-    <div className="max-w-xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Contact</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          name="name"
-          placeholder="Your name"
-          required
-          className="w-full rounded-xl border border-black/10 p-3 bg-white/60 dark:bg-black/20"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="you@example.com"
-          required
-          className="w-full rounded-xl border border-black/10 p-3 bg-white/60 dark:bg-black/20"
-        />
-        <textarea
-          name="message"
-          placeholder="Tell me about your project…"
-          required
-          rows={6}
-          className="w-full rounded-xl border border-black/10 p-3 bg-white/60 dark:bg-black/20"
-        />
-        <button className="rounded-xl bg-[rgb(var(--brand))] text-white px-5 py-3 font-medium">
-          Send
-        </button>
-      </form>
-      {status && <p className="mt-4 text-sm">{status}</p>}
-    </div>
+    <Section
+      title="Contact"
+      subtitle="Tell me about your product, scope, or technical challenge and I will get back to you with a clear next step."
+      align="left"
+      animated
+    >
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+        <div className="card-strong rounded-[2rem] p-5 sm:p-6">
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[rgb(var(--brand))]">
+            Reach out
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+            Let&apos;s talk about the build.
+          </h2>
+          <p className="text-muted mt-4 max-w-xl text-base leading-7">
+            I work best on products that need strong backend thinking, clean UI
+            structure, and reliable delivery across the stack.
+          </p>
+
+          <div className="mt-6 grid gap-3">
+            {[
+              { label: "Email", value: profile.email },
+              { label: "GitHub", value: profile.github },
+              { label: "LinkedIn", value: profile.linkedin },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="portfolio-glass rounded-[1.4rem] px-4 py-3"
+              >
+                <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[rgb(var(--accent))]">
+                  {item.label}
+                </p>
+                <p className="mt-1 break-all text-sm text-[rgb(var(--fg))]">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <ContactForm />
+      </div>
+    </Section>
   );
 }

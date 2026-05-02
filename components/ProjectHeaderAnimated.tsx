@@ -36,7 +36,8 @@ export default function ProjectHeaderAnimated({
     >
       <motion.h1
         variants={itemUp}
-        className="text-3xl md:text-5xl font-bold tracking-tight"
+        className="select-text text-3xl font-bold tracking-tight md:text-5xl"
+        style={{ userSelect: "text" }}
       >
         {title}
       </motion.h1>
@@ -44,7 +45,8 @@ export default function ProjectHeaderAnimated({
       {shortDesc ? (
         <motion.p
           variants={itemUp}
-          className="text-[rgb(var(--muted))] text-base md:text-lg"
+          className="select-text text-base text-[rgb(var(--muted))] md:text-lg"
+          style={{ userSelect: "text" }}
         >
           {shortDesc}
         </motion.p>

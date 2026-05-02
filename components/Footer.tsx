@@ -1,4 +1,5 @@
 // src/components/Footer.tsx
+import { PROFILE_NAME } from "@/constants";
 import { profile } from "@/data/profile";
 import AnimatedFooter from "@/components/AnimatedFooter";
 
@@ -41,5 +42,7 @@ export default async function Footer() {
     },
   ];
 
-  return <AnimatedFooter brand="Boolean" year={year} socials={socials} />;
+  return (
+    <AnimatedFooter brand={PROFILE_NAME} year={year} socials={socials} />
+  );
 }

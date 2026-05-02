@@ -31,21 +31,20 @@ export default function AnimatedNavLinks({ items }: { items: Item[] }) {
           {isExternal ? (
             <a
               href={href}
-              className="px-3 py-2 rounded-lg text-sm md:text-base relative group"
+              className="group relative rounded-full px-4 py-2 text-sm font-medium text-[rgb(var(--fg))] no-underline transition hover:bg-[rgba(var(--brand),0.08)]"
               target="_blank"
               rel="noreferrer"
             >
               {label}
-              {/* animated underline on hover */}
-              <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] h-[2px] origin-left scale-x-0 bg-[rgb(var(--brand))] transition-transform duration-200 group-hover:scale-x-100" />
+              <span className="pointer-events-none absolute inset-x-4 bottom-1 h-px origin-left scale-x-0 bg-[rgb(var(--brand))] transition-transform duration-200 group-hover:scale-x-100" />
             </a>
           ) : (
             <Link
               href={href}
-              className="px-3 py-2 rounded-lg text-sm md:text-base relative group"
+              className="group relative rounded-full px-4 py-2 text-sm font-medium text-[rgb(var(--fg))] no-underline transition hover:bg-[rgba(var(--brand),0.08)]"
             >
               {label}
-              <span className="pointer-events-none absolute left-3 right-3 -bottom-[2px] h-[2px] origin-left scale-x-0 bg-[rgb(var(--brand))] transition-transform duration-200 group-hover:scale-x-100" />
+              <span className="pointer-events-none absolute inset-x-4 bottom-1 h-px origin-left scale-x-0 bg-[rgb(var(--brand))] transition-transform duration-200 group-hover:scale-x-100" />
             </Link>
           )}
         </motion.div>

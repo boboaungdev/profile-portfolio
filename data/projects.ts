@@ -3,8 +3,9 @@ import { Project } from "@/types";
 export const projects: Project[] = [
   {
     _id: "1",
-    title: "Profile Portfolio - Next.js 15 + TailwindCSS v4",
-    shortDesc: "Modern portfolio built with Next.js and TailwindCSS",
+    title: "Portfolio Website",
+    shortDesc:
+      "A polished developer portfolio built with Next.js, thoughtful motion, and a cleaner case-study-driven presentation.",
     longDesc:
       "A responsive and feature-rich developer portfolio showcasing projects, resume, and contact information. Built with Next.js 15, React 19, and TypeScript. Styled using TailwindCSS v4 with class variance utilities, and supporting both dark mode and light mode using next-themes. Enhanced UI with lucide-react icons and Embla carousel for interactive project showcases. Backend powered by MongoDB and Mongoose for dynamic data storage, with validation via Joi and email integration using Resend API.",
     tags: [
@@ -22,20 +23,98 @@ export const projects: Project[] = [
       "Resend",
       "Embla Carousel",
     ],
+    role: "Design, frontend architecture, content structure, and API integration",
+    timeframe: "2026 refresh",
+    status: "Live",
+    platform: "Portfolio website",
     images: [
       "/projects/profile-portfolio/1.png",
       "/projects/profile-portfolio/2.png",
       "/projects/profile-portfolio/3.png",
       "/projects/profile-portfolio/4.png",
-      "/projects/profile-portfolio/5.png",
+    ],
+    highlights: [
+      "Rebuilt the visual system with a calmer, more product-focused layout and stronger section rhythm.",
+      "Improved browsing with full-card project interactions, refreshed screenshot galleries, and richer project storytelling.",
+      "Integrated server-side contact handling with Resend-backed email delivery and validation.",
+    ],
+    architecture: [
+      "Next.js App Router with server-rendered pages and API routes for contact handling.",
+      "TailwindCSS v4 token-based design system with reusable glass-card and button patterns.",
+      "Typed local project data so content stays easy to maintain while pages remain fast.",
+    ],
+    impact: [
+      "Makes the portfolio feel more like a polished product than a simple gallery.",
+      "Presents the work more clearly to recruiters, founders, and freelance clients.",
+      "Keeps future updates easy through centralized config and structured content.",
     ],
     live: "https://boboaung.vercel.app",
     source: "https://github.com/boboaungdev/profile-portfolio",
   },
   {
+    _id: "9",
+    title: "Strat Arena",
+    shortDesc:
+      "A full-stack trading product with a public website, authenticated app, and Express API for strategy and backtesting workflows.",
+    longDesc:
+      "Strat Arena is a multi-part trading product built inside one repository with three connected surfaces: a public Next.js marketing website, a Vite + React product app, and an Express + MongoDB backend API. The platform is designed to help traders create strategies, run backtests, manage subscriptions, and work through a cleaner end-to-end workflow. The website focuses on positioning, pricing, product education, and support paths. The web app handles authenticated product flows such as strategy management, dashboards, pricing access, bookmarks, profile views, and wallet-related experiences. The backend provides the core API, validation, authentication, data models, and business logic that connect the product together. The project reflects full-stack product thinking across UI design, state management, API design, database structure, and production-oriented application architecture.",
+    tags: [
+      "Next.js",
+      "React",
+      "Vite",
+      "TypeScript",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "Zustand",
+      "Backtesting",
+      "Product Design",
+      "Full Stack",
+    ],
+    role: "Product design, frontend implementation, backend architecture, and full-stack integration",
+    timeframe: "Ongoing product build",
+    status: "Live",
+    platform: "Website, web app, and API platform",
+    images: [
+      "/projects/strat-arena/1.png",
+      "/projects/strat-arena/2.png",
+      "/projects/strat-arena/3.png",
+      "/projects/strat-arena/4.png",
+      "/projects/strat-arena/5.png",
+      "/projects/strat-arena/6.png",
+      "/projects/strat-arena/7.png",
+      "/projects/strat-arena/8.png",
+      "/projects/strat-arena/9.png",
+      "/projects/strat-arena/10.png",
+      "/projects/strat-arena/11.png",
+      "/projects/strat-arena/12.png",
+      "/projects/strat-arena/13.png",
+    ],
+    highlights: [
+      "Built a three-surface product: public marketing site, authenticated web app, and backend API in one repository.",
+      "Designed cleaner product storytelling for pricing, feature explanation, and support paths.",
+      "Implemented strategy, backtest, subscription, wallet, and user flows across frontend and backend layers.",
+    ],
+    architecture: [
+      "Next.js website for SEO-driven public pages and product positioning.",
+      "Vite + React app with Zustand state for authenticated dashboards and trading workflows.",
+      "Express + MongoDB API with models, routes, validation, and trading-related business logic.",
+    ],
+    impact: [
+      "Shows full-stack ownership across UX, frontend systems, API design, and data modeling.",
+      "Demonstrates the ability to organize a multi-app codebase without losing product clarity.",
+      "Presents a stronger product case study than a standalone landing page or isolated backend service.",
+    ],
+    live: "https://stratarena.com",
+    source: "https://github.com/boboaungdev/strat-arena",
+  },
+  {
     _id: "2",
-    title: "Chat Mal - Cross-Platform Chat App",
-    shortDesc: "Cross-platform chat and calling app with real-time messaging",
+    title: "Chat Mal",
+    shortDesc:
+      "A cross-platform chat and calling app with realtime messaging, push notifications, and voice or video communication.",
     longDesc:
       "Chat Mal is a full-featured cross-platform messaging application supporting real-time text, voice, and video communication. The mobile client is built with Expo React Native, targeting both iOS and Android with modern modules for camera, audio, video, and notifications. Real-time messaging and call signaling are powered by Socket.IO, while WebRTC enables high-quality voice and video calls with features like call logs, push notifications, and native call UI integration via react-native-callkeep. The backend, developed with Node.js, Express, and MongoDB (Mongoose), manages authentication, messaging, media storage, and notifications. Redis is used for caching and session management, Joi for validation, and services like Cloudinary and Nodemailer handle media and email delivery. The system also integrates Expo Push Notifications for reliable cross-device alerts. Designed with scalability, modular architecture, and production-ready security best practices.",
     tags: [
@@ -49,7 +128,7 @@ export const projects: Project[] = [
       "Express",
       "MongoDB",
       "Mongoose",
-      "Restful API",
+      "REST API",
       "Redis",
       "Joi",
       "Next.js",
@@ -58,9 +137,7 @@ export const projects: Project[] = [
       "Expo Notifications",
       "React Native CallKeep",
       "Cross-Platform",
-      "Real-Time Messaging",
-      "Socket.IO",
-      "WebRTC",
+      "Realtime Messaging",
       "Push Notifications",
       "Zustand",
       "TypeScript",
@@ -68,22 +145,41 @@ export const projects: Project[] = [
       "Light Mode",
       "OAuth",
     ],
+    role: "Mobile and backend development for realtime messaging and calling features",
+    timeframe: "Production-ready app build",
+    status: "Live",
+    platform: "Cross-platform mobile app",
     images: [
       "/projects/chat-mal/1.png",
       "/projects/chat-mal/2.png",
       "/projects/chat-mal/3.png",
       "/projects/chat-mal/4.png",
     ],
+    highlights: [
+      "Delivered realtime chat, push notifications, and voice or video calling in one cross-platform experience.",
+      "Connected mobile UX with backend authentication, media handling, and signaling infrastructure.",
+      "Focused on production concerns like notifications, call flows, and session handling.",
+    ],
+    architecture: [
+      "Expo React Native client for iOS and Android with device and notification integrations.",
+      "Socket.IO signaling and realtime messaging backed by Node.js, Express, and MongoDB.",
+      "WebRTC for live calling plus Redis, Cloudinary, and email or notification services for supporting flows.",
+    ],
+    impact: [
+      "Shows strong experience in event-driven systems and realtime communication products.",
+      "Demonstrates the ability to bridge mobile UX with backend infrastructure decisions.",
+      "Highlights deeper engineering breadth than standard CRUD-only application work.",
+    ],
     live: "https://apkpure.com/p/com.chat.mal",
     source: "https://github.com/boboaungdev/chat-mal",
   },
   {
     _id: "3",
-    title: "Node.js Express E-commerce API",
+    title: "E-commerce API",
     shortDesc:
-      "Fast, secure, and maintainable REST API for an e-commerce backend built with Node.js, Express, MongoDB/Mongoose, Joi validation, JWT auth with refresh rotation, Redis caching/queues (ioredis), Socket.IO for realtime events, and express-fileupload for media uploads.",
+      "A secure Node.js and Express backend for e-commerce with JWT auth, validation, Redis, uploads, and realtime events.",
     longDesc:
-      "A modular Node.js REST API built with Express 4, MongoDB/Mongoose 8, and JWT authentication. Features role/permit access control, product/catalog endpoints (categories, subcategories, tags, deliveries, products, orders), file uploads via express-fileupload, and Redis-backed sessions/cache. Validation is Joi-first across routes, with centralized error handling and environment-driven config (dotenv). Includes a Socket.IO namespace (api/chat) for real-time messaging with token gating via jwt.verify and Redis lookups, plus a migration bootstrap (defaultDataMigrate) to seed initial roles/permits/users. Clean architecture with separate routers, utils (validator, helper, redis), and a watch-mode dev workflow.",
+      "A modular Node.js REST API built with Express 4, MongoDB/Mongoose 8, and JWT authentication. Features role and permit access control, product and catalog endpoints (categories, subcategories, tags, deliveries, products, orders), file uploads via express-fileupload, and Redis-backed sessions or cache. Validation is Joi-first across routes, with centralized error handling and environment-driven config (dotenv). Includes a Socket.IO namespace (api/chat) for realtime messaging with token gating via jwt.verify and Redis lookups, plus a migration bootstrap (defaultDataMigrate) to seed initial roles, permits, and users. Clean architecture with separate routers and utility modules for validation, helpers, and Redis usage.",
     tags: [
       "Node.js",
       "Express",
@@ -101,11 +197,11 @@ export const projects: Project[] = [
   },
   {
     _id: "4",
-    title: "CCXT Futures Bot (EMA + Engulfing)",
+    title: "CCXT Futures Bot",
     shortDesc:
-      "Automated Binance Futures bot using CCXT with EMA trend + engulfing entries, TP/SL automation, and leverage control.",
+      "An automated Binance futures bot using CCXT with EMA-based trend logic, engulfing entries, and bracketed risk controls.",
     longDesc:
-      "A production-focused Python trading bot for Binance USDT-M futures built with CCXT. The bot fetches OHLCV on a configurable timeframe (e.g., 5m), computes EMA(12/26) for trend detection, and confirms entries with bullish/bearish engulfing/3-line-strike logic. It adjusts leverage via Binance Futures API, sizes orders from a USDT budget, and automatically places bracket risk management using take-profit-market and stop-market orders with a TP:SL ratio. The engine inspects existing positions and open orders to avoid duplicating TP/SL, converts timestamps to Asia/Yangon, and runs on a scheduler loop with robust logging and centralized helpers. Designed for clear separation of concerns and safe defaults, including token-gated namespaces for future Socket/alerts if extended.",
+      "A production-focused Python trading bot for Binance USDT-M futures built with CCXT. The bot fetches OHLCV on a configurable timeframe (for example, 5m), computes EMA(12/26) for trend detection, and confirms entries with bullish or bearish engulfing and three-line-strike logic. It adjusts leverage via Binance Futures API, sizes orders from a USDT budget, and automatically places bracket risk management using take-profit-market and stop-market orders with a TP to SL ratio. The engine inspects existing positions and open orders to avoid duplicating TP or SL, converts timestamps to Asia/Yangon, and runs on a scheduler loop with robust logging and centralized helpers. Designed for clear separation of concerns and safe defaults, including token-gated namespaces for future alerts if extended.",
     tags: [
       "Python",
       "CCXT",
@@ -116,7 +212,7 @@ export const projects: Project[] = [
       "Leverage Control",
       "Pandas",
       "Scheduler",
-      "UTC→Asia/Yangon",
+      "UTC to Asia/Yangon",
     ],
     images: ["/projects/ccxt-bot/1.png", "/projects/ccxt-bot/2.png"],
     source:
@@ -124,8 +220,9 @@ export const projects: Project[] = [
   },
   {
     _id: "5",
-    title: "BMI Calculator - Flutter + Dart",
-    shortDesc: "A Flutter app to calculate Body Mass Index (BMI).",
+    title: "BMI Calculator",
+    shortDesc:
+      "A Flutter BMI app with interactive sliders, fast feedback, and a clean mobile-first interface.",
     longDesc:
       "A simple yet modern BMI Calculator built with Flutter and Dart. The app allows users to input their weight and height using interactive sliders powered by Syncfusion, and calculates their BMI instantly. It features a clean splash screen, a user-friendly home screen, and custom theming with Oswald and Roboto fonts. Assets are structured for scalability, including logos, icons, and images. The app is styled with a custom AppColors system, providing consistency across light and dark modes.",
     tags: [
@@ -147,11 +244,11 @@ export const projects: Project[] = [
   },
   {
     _id: "6",
-    title: "Next.js E-commerce (Client + Admin)",
+    title: "Next.js E-commerce Platform",
     shortDesc:
-      "Full-stack store with Next.js 15, Prisma, Stripe, Clerk auth, and an admin dashboard.",
+      "A full-stack store with customer and admin apps powered by Next.js, Prisma, Stripe, Clerk, and Postgres.",
     longDesc:
-      "A production-ready e-commerce platform split into a customer app (client) and an admin CMS. The stack uses Next.js 15 (App Router), React 19, TailwindCSS with Radix UI primitives, Zustand for state, and React Hot Toast for UX. The admin app integrates Clerk for authentication, Prisma ORM for Postgres, and Cloudinary for media. Features include product/catalog management with variants and images, categories/tags, inventory and status toggles, order management with Stripe payments/webhooks, charts & KPIs via Recharts, command palette (cmdk), and dark mode via next-themes. Clean modular architecture with Zod/React Hook Form validation, server actions/route handlers, and Prisma migrations for reliable deploys.",
+      "A production-ready e-commerce platform split into a customer app and an admin CMS. The stack uses Next.js 15 (App Router), React 19, TailwindCSS with Radix UI primitives, Zustand for state, and React Hot Toast for UX. The admin app integrates Clerk for authentication, Prisma ORM for Postgres, and Cloudinary for media. Features include product and catalog management with variants and images, categories and tags, inventory and status toggles, order management with Stripe payments and webhooks, charts and KPIs via Recharts, command palette (cmdk), and dark mode via next-themes. Clean modular architecture with Zod and React Hook Form validation, server actions or route handlers, and Prisma migrations for reliable deploys.",
     tags: [
       "Next.js",
       "React 19",
@@ -177,9 +274,9 @@ export const projects: Project[] = [
   },
   {
     _id: "8",
-    title: "Record Film Production (HTML, CSS, Bootstrap)",
+    title: "Record Film Production",
     shortDesc:
-      "A responsive movie website built with Bootstrap 5 featuring trailers, genres, and search.",
+      "A responsive movie website built with Bootstrap featuring trailers, genre sections, and search-driven browsing.",
     longDesc:
       "A dynamic front-end movie website designed with semantic HTML5, custom CSS3, and Bootstrap 5. It includes a hero carousel for featured movies, genre-based sections, a responsive grid for movie cards, and a search bar for quick navigation. The layout is fully mobile-first with Bootstrap utilities, modals for trailers, and hover effects for interactivity. Ideal for showcasing upcoming releases or creating a streaming-style landing page.",
     tags: [
@@ -201,9 +298,9 @@ export const projects: Project[] = [
   },
   {
     _id: "7",
-    title: "Vue.js Shoppy E-commerce",
+    title: "Shoppy",
     shortDesc:
-      "A responsive e-commerce web app built with Vue 3, Vuex, Vue Router, and Bootstrap 5.",
+      "A Vue-based e-commerce SPA with cart state, category browsing, and a clean Bootstrap-powered storefront UI.",
     longDesc:
       "Shoppy is a modern single-page e-commerce application built using Vue 3, Vuex for state management, and Vue Router for navigation. It leverages Bootstrap 5 for responsive styling and FontAwesome for icons. The project includes product listing, category filters, a shopping cart with Vuex state persistence, and a clean modular architecture. Axios is integrated for API requests, allowing seamless backend communication. The app follows best practices with Vue CLI setup, ESLint linting, and a scalable folder structure suitable for production deployments.",
     tags: [

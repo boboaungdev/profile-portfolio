@@ -5,10 +5,25 @@ import { motion, easeOut } from "framer-motion";
 export default function ProjectSidebarCard({
   live,
   source,
+  role,
+  timeframe,
+  status,
+  platform,
 }: {
   live?: string;
   source?: string;
+  role?: string;
+  timeframe?: string;
+  status?: string;
+  platform?: string;
 }) {
+  const meta = [
+    { label: "Role", value: role },
+    { label: "Platform", value: platform },
+    { label: "Status", value: status },
+    { label: "Timeframe", value: timeframe },
+  ].filter((item) => item.value);
+
   return (
     <motion.aside
       initial={{ opacity: 0, x: 12 }}
@@ -18,41 +33,53 @@ export default function ProjectSidebarCard({
         transition: { duration: 0.35, ease: easeOut },
       }}
       viewport={{ once: true, amount: 0.3 }}
-      className="h-max rounded-2xl border border-[rgb(var(--border))] bg-white p-5 shadow-sm dark:bg-[rgb(var(--card))]"
+      className="card-strong h-max rounded-[1.8rem] p-5"
     >
-      <div className="space-y-4">
+      <div className="space-y-5">
+        {meta.length ? (
+          <div className="space-y-3">
+            {meta.map((item) => (
+              <div
+                key={item.label}
+                className="portfolio-glass rounded-[1.25rem] px-4 py-3"
+              >
+                <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[rgb(var(--accent))]">
+                  {item.label}
+                </p>
+                <p className="mt-1 text-sm leading-6 text-[rgb(var(--fg))]">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
         <div className="flex flex-col gap-3">
-          {live && (
+          {live ? (
             <motion.a
               href={live}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.995 }}
-              className="inline-flex items-center justify-center rounded-xl border border-[rgb(var(--border))]
-                         bg-[rgb(var(--card))] px-4 py-2.5 text-sm font-semibold text-[rgb(var(--fg))]
-                         shadow-sm transition hover:bg-[rgb(var(--card-strong))]
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--brand))]"
+              className="btn btn-primary no-underline"
             >
-              Live ↗
+              Visit Live Project
             </motion.a>
-          )}
+          ) : null}
 
-          {source && (
+          {source ? (
             <motion.a
               href={source}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.995 }}
-              className="inline-flex items-center justify-center rounded-xl border border-[rgb(var(--border))]
-                         bg-[rgb(var(--card))] px-4 py-2.5 text-sm font-semibold text-[rgb(var(--fg))]
-                         shadow-sm transition hover:bg-[rgb(var(--card-strong))]
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--brand))]"
+              className="btn btn-secondary no-underline"
             >
-              Source Code ↗
+              View Source Code
             </motion.a>
-          )}
+          ) : null}
         </div>
       </div>
     </motion.aside>

@@ -9,6 +9,13 @@ export type Project = {
   images: string[];
   live?: string;
   source?: string;
+  role?: string;
+  timeframe?: string;
+  status?: string;
+  platform?: string;
+  highlights?: string[];
+  architecture?: string[];
+  impact?: string[];
   createdAt?: string;
   updatedAt?: string;
 };
@@ -36,6 +43,7 @@ export interface Profile {
   website: string;
   image: string;
   skills: string[];
+  fullSkills?: string[];
 }
 
 export type ProjectListResponse = {

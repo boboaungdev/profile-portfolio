@@ -43,10 +43,16 @@ export default function AnimatedTitle({
       variants={container}
       initial="hidden"
       animate="show"
-      className={className}
+      className={`select-text ${className || ""}`}
+      style={{ userSelect: "text" }}
     >
       {text.map((wordText, i) => (
-        <motion.span key={i} variants={word} className="inline-block mr-2">
+        <motion.span
+          key={i}
+          variants={word}
+          className="mr-2 inline-block select-text"
+          style={{ userSelect: "text" }}
+        >
           {wordText}
         </motion.span>
       ))}

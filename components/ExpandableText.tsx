@@ -32,12 +32,17 @@ export default function ExpandableText({
       <div
         ref={contentRef}
         className={clsx(
-          "transition-[max-height] duration-300 ease-in-out overflow-hidden prose max-w-none prose-p:leading-relaxed",
+          "prose max-w-none overflow-hidden transition-[max-height] duration-300 ease-in-out prose-p:leading-relaxed",
           expanded ? "max-h-[2000px]" : `max-h-[${collapsedHeight}px]`
         )}
         style={!expanded ? { maxHeight: collapsedHeight } : undefined}
       >
-        <p className="text-[rgb(var(--muted))] whitespace-pre-line">{text}</p>
+        <p
+          className="select-text whitespace-pre-line text-[rgb(var(--muted))]"
+          style={{ userSelect: "text" }}
+        >
+          {text}
+        </p>
       </div>
 
       {/* gradient fade at bottom when collapsed */}

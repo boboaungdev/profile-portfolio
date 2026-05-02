@@ -11,14 +11,11 @@ export function TechBadge({
   return (
     <span
       className={clsx(
-        // Surface + border use your CSS vars (globals.css)
-        "inline-flex items-center rounded-lg border",
-        "border-[rgba(var(--border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))]",
-        // Spacing & type
-        small ? "px-2 py-0.5 text-xs" : "px-2.5 py-1 text-[13px]",
-        // Hover focus polish
+        "portfolio-chip inline-flex items-center rounded-full",
+        "text-[rgb(var(--fg))]",
+        small ? "px-2.5 py-1 text-[11px]" : "px-3 py-1.5 text-[12px]",
         "transition-colors",
-        "hover:border-[rgba(3_7_18/.14)] dark:hover:border-[rgba(255_255_255/.16)]",
+        "hover:border-[rgba(var(--brand),0.22)] hover:bg-[rgba(var(--brand),0.08)]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--ring))]"
       )}
     >

@@ -15,7 +15,7 @@ const item: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: easeOut }, // 👈 use imported easing fn
+    transition: { duration: 0.4, ease: easeOut },
   },
 };
 
@@ -27,7 +27,7 @@ export function ContactForm() {
     e.preventDefault();
     const formEl = e.currentTarget;
     const form = new FormData(formEl);
-    setStatus("Sending…");
+    setStatus("Sending...");
     setSubmitting(true);
 
     try {
@@ -72,22 +72,31 @@ export function ContactForm() {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="space-y-4 w-full"
+      className="card-strong w-full space-y-4 p-5 sm:p-6"
       variants={container}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
     >
+      <motion.div variants={item} className="space-y-2">
+        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[rgb(var(--brand))]">
+          Start a conversation
+        </p>
+        <h3 className="text-2xl font-semibold tracking-tight">
+          Tell me what you want to build
+        </h3>
+        <p className="text-sm leading-6 text-[rgb(var(--muted))]">
+          Share the product idea, timeline, or technical problem. I&apos;ll
+          reply with a clear next step.
+        </p>
+      </motion.div>
+
       <motion.input
         variants={item}
         name="name"
         placeholder="Your name"
         required
-        className="w-full rounded-xl border border-[rgb(var(--border))] 
-             bg-[rgb(var(--card))] text-[rgb(var(--fg))] 
-             placeholder:text-[rgb(var(--muted))] 
-             p-3 focus:outline-none 
-             focus:ring-2 focus:ring-[rgb(var(--brand))]"
+        className="w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] p-3.5 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]"
       />
 
       <motion.input
@@ -96,34 +105,26 @@ export function ContactForm() {
         name="email"
         placeholder="you@example.com"
         required
-        className="w-full rounded-xl border border-[rgb(var(--border))] 
-             bg-[rgb(var(--card))] text-[rgb(var(--fg))] 
-             placeholder:text-[rgb(var(--muted))] 
-             p-3 focus:outline-none 
-             focus:ring-2 focus:ring-[rgb(var(--brand))]"
+        className="w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] p-3.5 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]"
       />
 
       <motion.textarea
         variants={item}
         name="message"
-        placeholder="Tell me about your project…"
+        placeholder="Tell me about your project..."
         required
         rows={6}
-        className="w-full rounded-xl border border-[rgb(var(--border))] 
-             bg-[rgb(var(--card))] text-[rgb(var(--fg))] 
-             placeholder:text-[rgb(var(--muted))] 
-             p-3 focus:outline-none 
-             focus:ring-2 focus:ring-[rgb(var(--brand))]"
+        className="w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] p-3.5 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]"
       />
 
       <motion.button
         variants={item}
         disabled={submitting}
-        className="rounded-xl bg-[rgb(var(--brand))] text-white px-5 py-2 font-medium disabled:opacity-70"
+        className="btn btn-primary disabled:opacity-70"
         type="submit"
         whileTap={{ scale: 0.98 }}
       >
-        {submitting ? "Sending…" : "Send"}
+        {submitting ? "Sending..." : "Send Message"}
       </motion.button>
 
       <AnimatePresence>
@@ -134,7 +135,7 @@ export function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.25 }}
-            className="mt-3 text-sm"
+            className="mt-3 text-sm text-[rgb(var(--muted))]"
           >
             {status}
           </motion.p>

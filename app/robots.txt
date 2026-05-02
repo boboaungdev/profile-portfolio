@@ -1,4 +1,0 @@
-// src/app/robots.txt (static file)
-User-agent: *
-Allow: /
-Sitemap: https://boolean405.vercel.app/sitemap.xml
