@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectRoutes = projects.map((p) => ({
     url: `${base}/projects/${p._id}`,
     lastModified: new Date(),
+    images: p.images.map((image) => `${base}${image}`),
   }));
   return [...routes, ...projectRoutes];
 }

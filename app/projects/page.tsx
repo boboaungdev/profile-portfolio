@@ -11,6 +11,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Explore full-stack, mobile, realtime, and backend projects built by Bo Bo Aung.",
   path: "/projects",
+  imageWidth: 1200,
+  imageHeight: 630,
 });
 
 export default async function ProjectsPage() {

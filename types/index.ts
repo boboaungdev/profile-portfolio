@@ -41,7 +41,7 @@ export interface Profile {
   linkedin: string;
   x: string;
   website: string;
-  image: string;
+  image?: string;
   skills: string[];
   fullSkills?: string[];
 }

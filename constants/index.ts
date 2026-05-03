@@ -7,8 +7,8 @@ export const PROFILE_GITHUB_URL = "https://github.com/boboaungdev";
 export const PROFILE_LINKEDIN_URL = "https://linkedin.com/in/boboaung";
 export const PROFILE_X_HANDLE = "@boboaungdev";
 export const PROFILE_EMAIL = "bobo@stratarena.com";
-export const PROFILE_IMAGE_PATH = "/profile/profile.jpg";
-
+export const PROFILE_IMAGE_PATH = "/logo.png";
+export const SEO_IMAGE_PATH = "/seo-banner.png";
 const EXPERIENCE_START_YEAR = 2019;
 export const EXPERIENCE_YEARS = Math.max(
   0,

@@ -3,14 +3,16 @@ import {
   PORTFOLIO_RESUME_URL,
   PROFILE_EMAIL,
   PROFILE_GITHUB_URL,
+  PROFILE_IMAGE_PATH,
   PROFILE_LINKEDIN_URL,
   PROFILE_NAME,
   PROFILE_TITLE,
   PROFILE_WEBSITE_URL,
   PROFILE_X_URL,
 } from "@/constants";
+import type { Profile } from "@/types";
 
-export const profile = {
+export const profile: Profile = {
   name: PROFILE_NAME,
   title: PROFILE_TITLE,
   resume: PORTFOLIO_RESUME_URL,
@@ -21,7 +23,7 @@ export const profile = {
   description:
     "Full-stack developer portfolio with projects, resume, and contact.",
   email: PROFILE_EMAIL,
-  image: "/profile/profile.jpg",
+  image: PROFILE_IMAGE_PATH,
   bio: `Full-stack developer with ${EXPERIENCE_LABEL} years building scalable web, mobile, realtime, Web3, and trading systems with Node.js, Next.js, React, MongoDB, Expo, and AI-assisted development workflows.`,
   skills: [
     "JavaScript",

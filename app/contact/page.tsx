@@ -10,6 +10,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Contact Bo Bo Aung about freelance work, backend-heavy products, realtime systems, or full-stack app builds.",
   path: "/contact",
+  imageWidth: 1200,
+  imageHeight: 630,
 });
 
 export default function ContactPage() {

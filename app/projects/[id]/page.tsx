@@ -26,6 +26,8 @@ export async function generateMetadata({
       title: "Project",
       description: "Project details",
       path: `/projects/${id}`,
+      imageWidth: 1200,
+      imageHeight: 630,
     });
   }
 
@@ -33,6 +35,7 @@ export async function generateMetadata({
     title: project.title,
     description: project.shortDesc,
     path: `/projects/${project._id}`,
+    imagePath: project.images[0],
   });
 }
 

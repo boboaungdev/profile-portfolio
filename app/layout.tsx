@@ -5,21 +5,20 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import {
   GOOGLE_SITE_VERIFICATION,
-  PROFILE_IMAGE_PATH,
   PROFILE_NAME,
   PROFILE_TITLE,
   PROFILE_WEBSITE_URL,
+  SEO_IMAGE_PATH,
   PROFILE_X_HANDLE,
 } from "@/constants";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
-import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(PROFILE_WEBSITE_URL),
   title: {
-    default: `${PROFILE_NAME} - Portfolio`,
+    default: `${PROFILE_NAME} - ${PROFILE_TITLE}`,
     template: `%s | ${PROFILE_NAME}`,
   },
   description: `Full-stack developer portfolio by ${PROFILE_NAME}. Projects, resume, and contact - building scalable web and mobile apps with Node.js, React, Next.js, and Expo.`,
@@ -46,7 +45,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     images: [
-      { url: absoluteUrl(PROFILE_IMAGE_PATH), width: 1200, height: 630 },
+      {
+        url: new URL(SEO_IMAGE_PATH, PROFILE_WEBSITE_URL).toString(),
+        width: 1200,
+        height: 630,
+      },
     ],
   },
   twitter: {
@@ -54,14 +57,14 @@ export const metadata: Metadata = {
     title: `${PROFILE_NAME} - ${PROFILE_TITLE}`,
     description: `Portfolio of ${PROFILE_NAME}: projects, resume, and contact. Building scalable, real-time web and mobile applications.`,
     creator: PROFILE_X_HANDLE,
-    images: [absoluteUrl(PROFILE_IMAGE_PATH)],
+    images: [new URL(SEO_IMAGE_PATH, PROFILE_WEBSITE_URL).toString()],
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: ["/favicon-16x16.png", "/favicon-32x32.png"],
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,

@@ -10,6 +10,13 @@ import AnimatedReveal from "@/components/AnimatedReveal";
 import AnimatedParagraph from "./AnimatedParagraph";
 import AnimatedGroup from "./AnimatedGroup";
 
+const profileInitials = profile.name
+  .split(" ")
+  .map((part) => part[0])
+  .join("")
+  .slice(0, 2)
+  .toUpperCase();
+
 const spotlightStats = [
   { label: "Years building", value: EXPERIENCE_LABEL },
   { label: "Projects shipped", value: "8+" },
@@ -123,14 +130,20 @@ export default async function Hero() {
                 <div className="grid gap-4 md:grid-cols-[minmax(220px,0.78fr)_minmax(0,1.22fr)] lg:mx-auto lg:max-w-[430px] lg:grid-cols-1 2xl:max-w-none 2xl:grid-cols-[minmax(220px,0.78fr)_minmax(0,1.22fr)]">
                   <div className="rounded-[1.75rem] border border-[rgba(var(--border))] bg-[rgba(var(--card),0.72)] p-3 backdrop-blur-xl">
                     <div className="overflow-hidden rounded-[1.45rem]">
-                      <Image
-                        src={profile.image}
-                        alt={`${profile.name} portrait`}
-                        width={640}
-                        height={640}
-                        priority
-                        className="aspect-[4/5] w-full object-cover"
-                      />
+                      {profile.image ? (
+                        <Image
+                          src={profile.image}
+                          alt={`${profile.name} portrait`}
+                          width={640}
+                          height={640}
+                          priority
+                          className="aspect-[4/5] w-full object-cover"
+                        />
+                      ) : (
+                        <div className="flex aspect-[4/5] w-full items-center justify-center bg-[linear-gradient(135deg,rgba(var(--brand),0.18),rgba(var(--accent),0.22))] text-6xl font-semibold tracking-[0.12em] text-[rgb(var(--fg))]">
+                          {profileInitials}
+                        </div>
+                      )}
                     </div>
                   </div>
 

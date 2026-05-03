@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Code2,
-  Database,
-  Rocket,
-  Workflow,
-} from "lucide-react";
+import { Code2, Database, Rocket, Workflow } from "lucide-react";
 import { SiGithub, SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa6";
 
@@ -12,6 +7,7 @@ import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { personJsonLd } from "@/lib/seo";
 import { createPageMetadata } from "@/lib/seo";
+import { websiteJsonLd } from "@/lib/seo";
 import Hero from "@/components/Hero";
 import { ContactForm } from "@/components/ContactForm";
 import { projects as projectsData } from "@/data/projects";
@@ -127,10 +123,7 @@ const skillGroups = [
     title: "Tools & Delivery",
     summary:
       "Deployment, collaboration, and workflow tools used in real projects.",
-    skills: [
-      "Git/GitHub",
-      "AI-Assisted Development",
-    ],
+    skills: ["Git/GitHub", "AI-Assisted Development"],
   },
 ];
 
@@ -138,6 +131,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Portfolio homepage for Bo Bo Aung, featuring full-stack projects, skills, and contact details.",
   path: "/",
+  imageWidth: 1200,
+  imageHeight: 630,
 });
 
 export default async function HomePage() {
@@ -145,7 +140,9 @@ export default async function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([personJsonLd(), websiteJsonLd()]),
+        }}
       />
 
       <Hero />
