@@ -95,6 +95,23 @@ a:hover {
   border-radius: 12px;
 }
 
+input,
+textarea,
+select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 button:not(:disabled),
 [role="button"]:not(:disabled) {
   cursor: pointer;

@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-
+import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { PROFILE_NAME } from "@/constants";
 import { profile } from "@/data/profile";
@@ -12,14 +11,21 @@ import MobileNav from "@/components/MobileNav";
 export default async function Navbar() {
   const desktopItems = [
     { href: "#projects", label: "Projects", isExternal: false },
+    { href: "#skills", label: "Skills", isExternal: false },
     { href: "#contact", label: "Contact", isExternal: false },
-    { href: profile.resume, label: "Resume", isExternal: false },
   ];
 
   const mobileItems = [
     { href: "/#projects", label: "Projects" },
+    { href: "/#skills", label: "Skills" },
     { href: "/#contact", label: "Contact" },
-    { href: profile.resume, label: "Resume", external: false },
+    {
+      href: profile.resume,
+      label: "Download Resume",
+      external: true,
+      download: true,
+      tone: "primary" as const,
+    },
   ];
 
   return (
@@ -46,27 +52,25 @@ export default async function Navbar() {
           </span>
         </HomeLink>
 
-        <nav className="hidden items-center gap-2 md:flex">
+        <nav className="hidden items-center gap-2 lg:flex">
           <HomeLink className="rounded-full px-4 py-2 text-sm font-medium text-[rgb(var(--fg))] no-underline transition hover:bg-[rgba(var(--brand),0.08)]">
             Home
           </HomeLink>
           <AnimatedNavLinks items={desktopItems} />
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
           <a
             href={profile.resume}
             className="btn btn-primary no-underline"
-            target="_blank"
-            rel="noreferrer"
           >
             Download Resume
             <ArrowUpRight className="size-4" />
           </a>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <MobileNav items={mobileItems} />
         </div>

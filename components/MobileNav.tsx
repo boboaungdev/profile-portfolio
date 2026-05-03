@@ -11,8 +11,15 @@ import {
   easeOut,
 } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import clsx from "clsx";
 
-type Item = { href: string; label: string; external?: boolean };
+type Item = {
+  href: string;
+  label: string;
+  external?: boolean;
+  download?: boolean;
+  tone?: "default" | "primary";
+};
 
 export default function MobileNav({ items }: { items: Item[] }) {
   const [open, setOpen] = useState(false);
@@ -83,11 +90,19 @@ export default function MobileNav({ items }: { items: Item[] }) {
     "focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--brand))] " +
     "transition-colors";
 
+  const primaryItemCls =
+    "block w-full text-right px-3 py-2 rounded-md text-sm font-medium tracking-tight " +
+    "border border-transparent text-white " +
+    "bg-[linear-gradient(135deg,rgb(var(--brand)),rgb(var(--brand-strong)))] " +
+    "shadow-[0_16px_32px_rgba(var(--brand),0.22)] " +
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--brand))] " +
+    "transition";
+
   return (
     <>
       <button
         aria-label="Open navigation"
-        className="md:hidden p-2 rounded-md border border-[rgb(var(--border))]"
+        className="lg:hidden p-2 rounded-md border border-[rgb(var(--border))]"
         onClick={() => setOpen(true)}
       >
         <Menu size={18} />
@@ -98,7 +113,7 @@ export default function MobileNav({ items }: { items: Item[] }) {
           <>
             <motion.div
               key="overlay"
-              className="fixed inset-0 z-[98] md:hidden bg-black/55 backdrop-blur-sm"
+              className="fixed inset-0 z-[98] lg:hidden bg-black/55 backdrop-blur-sm"
               variants={overlay}
               initial="hidden"
               animate="show"
@@ -108,7 +123,7 @@ export default function MobileNav({ items }: { items: Item[] }) {
 
             <motion.div
               key="panel"
-              className="fixed inset-0 z-[99] md:hidden grid place-items-end p-1 pr-2"
+              className="fixed inset-0 z-[99] lg:hidden grid place-items-end p-1 pr-2"
               variants={panel}
               initial="hidden"
               animate="show"
@@ -148,15 +163,18 @@ export default function MobileNav({ items }: { items: Item[] }) {
                   <Link href="/" onClick={handleHomeClick} className={itemCls}>
                     Home
                   </Link>
-                  {items.map(({ href, label, external }) =>
+                  {items.map(({ href, label, external, download, tone }) =>
                     external ? (
                       <a
                         key={href}
                         href={href}
                         target="_blank"
                         rel="noreferrer"
+                        download={download}
                         onClick={() => setOpen(false)}
-                        className={itemCls}
+                        className={clsx(
+                          tone === "primary" ? primaryItemCls : itemCls,
+                        )}
                       >
                         {label}
                       </a>
@@ -165,7 +183,9 @@ export default function MobileNav({ items }: { items: Item[] }) {
                         key={href}
                         href={href}
                         onClick={() => setOpen(false)}
-                        className={itemCls}
+                        className={clsx(
+                          tone === "primary" ? primaryItemCls : itemCls,
+                        )}
                       >
                         {label}
                       </Link>

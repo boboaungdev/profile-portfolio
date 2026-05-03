@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Code2, Database, Rocket, Workflow } from "lucide-react";
+import {
+  Code2,
+  Database,
+  Rocket,
+  Workflow,
+} from "lucide-react";
+import { SiGithub, SiGmail } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
@@ -14,6 +21,7 @@ import AnimatedGrid from "@/components/AnimatedGrid";
 import MotionProjectCard from "@/components/MotionProjectCard";
 import AnimatedCTA from "@/components/AnimatedCTA";
 import { TechBadge } from "@/components/TechBadge";
+import { EXPERIENCE_LABEL } from "@/constants";
 
 const strengths = [
   {
@@ -63,6 +71,66 @@ const services = [
     title: "Mobile and web delivery",
     description:
       "Cross-platform app work with Expo React Native plus responsive web experiences.",
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Backend",
+    summary: "APIs, auth, data modeling, and production server architecture.",
+    skills: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "Redis",
+      "REST APIs",
+      "JWT Authentication",
+      "Joi",
+    ],
+  },
+  {
+    title: "Frontend & UI",
+    summary:
+      "Modern web interfaces with product structure, styling systems, and polished delivery.",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "TailwindCSS",
+      "Bootstrap",
+      "Zustand",
+      "next-themes",
+      "Lucide-React",
+    ],
+  },
+  {
+    title: "Mobile",
+    summary:
+      "Cross-platform app work with practical UX and native integrations.",
+    skills: ["Expo React Native", "iOS", "Android", "OAuth"],
+  },
+  {
+    title: "Realtime",
+    summary:
+      "Live communication, notifications, and event-driven product flows.",
+    skills: ["Socket.IO", "WebRTC", "Realtime Messaging", "Push Notifications"],
+  },
+  {
+    title: "Cloud & Deployment",
+    summary:
+      "Platforms and release tools used to ship, host, and maintain products.",
+    skills: ["Docker", "CI/CD", "Vercel", "Render", "AWS Lambda"],
+  },
+  {
+    title: "Tools & Delivery",
+    summary:
+      "Deployment, collaboration, and workflow tools used in real projects.",
+    skills: [
+      "Git/GitHub",
+      "AI-Assisted Development",
+    ],
   },
 ];
 
@@ -202,23 +270,61 @@ export default async function HomePage() {
       >
         <AnimatedInView>
           <div className="card-strong rounded-[2rem] p-5 sm:p-6">
-            <div className="mb-5 flex items-center justify-between gap-4">
+            <div className="mb-6 grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
               <div>
                 <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[rgb(var(--brand))]">
                   Core stack
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight">
-                  Tools I use regularly
+                  Skills organized by the work they support
                 </h3>
+                <p className="text-muted mt-3 max-w-2xl text-sm leading-7">
+                  My strongest work sits at the intersection of backend systems,
+                  product-minded frontend implementation, realtime features, and
+                  cross-platform delivery.
+                </p>
               </div>
-              <span className="portfolio-chip rounded-full px-3 py-1 text-xs font-medium text-[rgb(var(--fg))]">
-                {profile.fullSkills?.length ?? profile.skills.length} skills
-              </span>
+
+              <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                {[
+                  { value: EXPERIENCE_LABEL, label: "Years building" },
+                  { value: "6", label: "Skill areas" },
+                  {
+                    value: `${profile.fullSkills?.length ?? profile.skills.length}+`,
+                    label: "Tools used",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="portfolio-glass rounded-[1.4rem] px-4 py-4"
+                  >
+                    <p className="text-2xl font-semibold tracking-tight text-[rgb(var(--fg))]">
+                      {item.value}
+                    </p>
+                    <p className="text-muted mt-1 text-sm">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-2">
-              {(profile.fullSkills ?? profile.skills).map((skill) => (
-                <TechBadge key={skill} label={skill} />
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {skillGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className="portfolio-glass rounded-[1.7rem] p-5"
+                >
+                  <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[rgb(var(--accent))]">
+                    {group.title}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-[rgb(var(--fg))]">
+                    {group.summary}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <TechBadge key={skill} label={skill} />
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -250,21 +356,46 @@ export default async function HomePage() {
 
               <div className="mt-6 grid gap-3">
                 {[
-                  { label: "Email", value: profile.email },
-                  { label: "GitHub", value: profile.github },
-                  { label: "LinkedIn", value: profile.linkedin },
+                  {
+                    label: "Email",
+                    value: profile.email,
+                    href: `mailto:${profile.email}`,
+                    icon: SiGmail,
+                  },
+                  {
+                    label: "GitHub",
+                    value: profile.github,
+                    href: profile.github,
+                    icon: SiGithub,
+                  },
+                  {
+                    label: "LinkedIn",
+                    value: profile.linkedin,
+                    href: profile.linkedin,
+                    icon: FaLinkedinIn,
+                  },
                 ].map((item) => (
-                  <div
+                  <a
                     key={item.label}
-                    className="portfolio-glass rounded-[1.4rem] px-4 py-3"
+                    href={item.href}
+                    className="portfolio-glass group rounded-[1.4rem] px-4 py-3 transition-transform duration-200 hover:-translate-y-0.5 hover:border-[rgba(var(--brand),0.28)] hover:bg-[rgba(var(--brand),0.08)] focus-visible:-translate-y-0.5 focus-visible:border-[rgba(var(--brand),0.3)] focus-visible:bg-[rgba(var(--brand),0.08)]"
+                    target={item.label === "Email" ? undefined : "_blank"}
+                    rel={item.label === "Email" ? undefined : "noreferrer"}
                   >
-                    <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[rgb(var(--accent))]">
-                      {item.label}
-                    </p>
-                    <p className="mt-1 break-all text-sm text-[rgb(var(--fg))]">
-                      {item.value}
-                    </p>
-                  </div>
+                    <div className="flex items-start gap-3">
+                      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-2xl bg-[rgba(var(--brand),0.12)] text-[rgb(var(--brand))] transition-colors duration-200 group-hover:bg-[rgba(var(--brand),0.18)] group-focus-visible:bg-[rgba(var(--brand),0.18)]">
+                        <item.icon className="size-4" />
+                      </span>
+                      <div>
+                        <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[rgb(var(--accent))] transition-colors duration-200 group-hover:text-[rgb(var(--brand))] group-focus-visible:text-[rgb(var(--brand))]">
+                          {item.label}
+                        </p>
+                        <p className="mt-1 break-all text-sm text-[rgb(var(--fg))]">
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>

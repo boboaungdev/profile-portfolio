@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence, type Variants, easeOut } from "framer-motion";
+import { Mail, MessageSquareText, User } from "lucide-react";
 
 const container: Variants = {
   hidden: { opacity: 1 },
@@ -18,6 +19,9 @@ const item: Variants = {
     transition: { duration: 0.4, ease: easeOut },
   },
 };
+
+const fieldClass =
+  "w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] pr-4 pl-12 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] transition-colors outline-none ring-0 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[rgba(var(--brand),0.3)] focus-visible:outline-none focus-visible:ring-0 focus-visible:shadow-none";
 
 export function ContactForm() {
   const [status, setStatus] = useState<string | null>(null);
@@ -91,31 +95,43 @@ export function ContactForm() {
         </p>
       </motion.div>
 
-      <motion.input
-        variants={item}
-        name="name"
-        placeholder="Your name"
-        required
-        className="w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] p-3.5 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]"
-      />
+      <motion.div variants={item} className="relative">
+        <span className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-[rgb(var(--muted))]">
+          <User className="size-4" />
+        </span>
+        <input
+          name="name"
+          placeholder="Your name"
+          required
+          className={`${fieldClass} py-3.5`}
+        />
+      </motion.div>
 
-      <motion.input
-        variants={item}
-        type="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-        className="w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] p-3.5 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]"
-      />
+      <motion.div variants={item} className="relative">
+        <span className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-[rgb(var(--muted))]">
+          <Mail className="size-4" />
+        </span>
+        <input
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          className={`${fieldClass} py-3.5`}
+        />
+      </motion.div>
 
-      <motion.textarea
-        variants={item}
-        name="message"
-        placeholder="Tell me about your project..."
-        required
-        rows={6}
-        className="w-full rounded-2xl border border-[rgba(var(--border))] bg-[rgba(var(--card),0.78)] p-3.5 text-[rgb(var(--fg))] placeholder:text-[rgb(var(--muted))] focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]"
-      />
+      <motion.div variants={item} className="relative">
+        <span className="pointer-events-none absolute top-4 left-4 text-[rgb(var(--muted))]">
+          <MessageSquareText className="size-4" />
+        </span>
+        <textarea
+          name="message"
+          placeholder="Tell me about your project..."
+          required
+          rows={4}
+          className={`${fieldClass} resize-none py-3.5`}
+        />
+      </motion.div>
 
       <motion.button
         variants={item}
