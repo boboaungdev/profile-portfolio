@@ -1,12 +1,12 @@
 export const PROFILE_NAME = "Bo Bo Aung";
 export const PROFILE_TITLE = "Full-Stack Developer";
 
-export const PROFILE_GITHUB_URL = "https://github.com/boboaungdev";
-export const PROFILE_LINKEDIN_URL = "https://www.linkedin.com/in/boboaung";
 export const PROFILE_X_URL = "https://x.com/boboaungdev";
-export const PROFILE_X_HANDLE = "@boboaungdev";
 export const PROFILE_WEBSITE_URL = "https://bobo.stratarena.com";
-export const PROFILE_EMAIL = "boboaungdev@gmail.com";
+export const PROFILE_GITHUB_URL = "https://github.com/boboaungdev";
+export const PROFILE_LINKEDIN_URL = "https://linkedin.com/in/boboaung";
+export const PROFILE_X_HANDLE = "@boboaungdev";
+export const PROFILE_EMAIL = "bobo@stratarena.com";
 export const PROFILE_IMAGE_PATH = "/profile/profile.jpg";
 
 const EXPERIENCE_START_YEAR = 2019;
